@@ -1,0 +1,80 @@
+
+
+{% load static %}
+<!DOCTYPE <html>
+<html lang="es">
+
+<head>
+    <meta charset="uft-8" />
+    <title>
+        {% block title %}
+        <!-- TITULO DE CADA PAGINA -->
+        {% endblock %}
+        | reymond caceres
+    </title>
+  
+        {% comment %} {% load compress %}
+        {% compress css %} {% endcomment %}
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static '/css/estilos.css' %}"/>
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"> -->
+        {% comment %} {% endcompress %} {% endcomment %}
+</head>
+
+<body>
+        <!-- cabecera de la pagina -->
+    <header>
+        
+      
+        <div id="logotipo">
+                <!-- logo django -->
+                {% load static %}
+                <img src="{% static '/images/logo.png' %}"/>
+                <h1>Proyecto con Django</h1>
+        </div>
+         
+     </header>
+
+     <nav>
+        <ul>
+            <li>
+                    <a href="{% url 'index' %}">Inicio</a>
+            </li>
+
+            <li>
+                <a href="{% url 'about' %}">Sobre nosotros</a>
+            </li>
+
+            
+        </ul>
+
+    </nav>
+
+    <div>
+        <span class="esquina-izquierda"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+   <br>
+
+    <div id="content">
+
+        <div class="box">
+            <h1 class="title">ANIMALES</h1>
+            {% block content %}
+                <!-- codigo que vienen de templates -->
+                <strong> contenido del bloque original!!  </strong>
+            {% endblock %}
+
+        </div>
+        
+    </div>
+      
+    <footer>
+        master en python &copy; Reymond Caceres -{% now "d/m/y" %}
+    </footer>
+
+</body>
+
+</html>
+
