@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'proyectoDjango',
     'mainapp',
-    # 'compressor'
+    'pages'
+   
+
 ]
 
 MIDDLEWARE = [
