@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'proyectoDjango',
+    'ckeditor',
     'mainapp',
-    'pages'
+    'pages.apps.PagesConfig'
    
 
 ]
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pages.context_processor.get_pages'
             ],
         },
     },
@@ -126,16 +128,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "mainapp/static"),)
 
+# ck_editor
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#     # other finders..
-#     'compressor.finders.CompressorFinder',
-# )
-
-# COMPRESS_ROOT = 'static'
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source', 'Table', 'Image']
+        ]
+    }
+}
 

@@ -248,12 +248,26 @@ nav ul li a:hover{
 
 
 .title{
-    color: #353caa;
+    color: #444;
     letter-spacing: 1px;
     font-size: 30px;
     margin-bottom: 10px;
     margin-top: 5px;
 }
+
+.date{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: gray;
+
+}
+
+.content{
+    line-height: 25px;
+}
+
+
 .article-item{
     margin-bottom: 20px;
     margin-top: 20px;
