@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'proyectoDjango',
     'ckeditor',
     'mainapp',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',
+    'blog.apps.BlogConfig'
    
 
 ]
@@ -69,7 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'pages.context_processor.get_pages'
+                'pages.context_processor.get_pages',
+                'blog.processor.get_categories'
             ],
         },
     },
@@ -126,6 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#media
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "mainapp/static"),)
 
 # ck_editor
