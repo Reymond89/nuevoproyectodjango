@@ -2,8 +2,18 @@ from django.contrib import admin
 
 from .models import Page
 
+# configuracion extra
+
+class PageAdmin(admin.ModelAdmin):
+    readonly_fields = ('create_at','updated_at')
+    search_fields = ('title','content')
+    list_filter = ('visible',)
+    list_display = ('title', 'visible','create_at')
+    ordering = ('create_at',)
+
+
 # Register your models here.
-admin.site.register(Page)
+admin.site.register(Page, PageAdmin)
 
 # configuracion del panel
 

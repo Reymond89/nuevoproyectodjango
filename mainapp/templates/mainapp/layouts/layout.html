@@ -37,39 +37,52 @@
      <nav>
         <ul>
             <li>
-                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'index' %}">INICIO</a>
             </li>
-            <li>
-                <a href="{% url 'list_articles' %}">categorias</a>
-                <ul>
-                    {% for category in categories %}
 
-                        <li>
-                            <a href="{% url 'category' category.0 %}">{{category.1}}</a>
-                        </li>
-                    {% endfor %} 
+            {% if user.email %}
+                <li>
+                    <a href="{% url 'list_articles' %}">CATEGORIA</a>
+                    <ul>
+                        {% for category in categories %}
+
+                            <li>
+                                <a href="{% url 'category' category.0 %}">{{category.1}}</a>
+                            </li>
+                        {% endfor %} 
+                        
+                    </ul>
+
+                </li>
+
+                {% for page in pages %}
+                    <li>
+                        <a href="{% url 'page' page.2 %}">{{page.1}}</a>
+                    </li>
+                {% endfor %} 
+
+                <li>
+                    <a href="{% url 'logout' %}">CERRAR SESION</a>
+                </li>
+
+
+            {% else %}      
+                <li>
+                    <a href="{% url 'register' %}">REGISTRO</a>
+                </li>
+
+                <li>
+
+                    <a href="{% url 'login' %}"> LOGIN </a>
                     
-                </ul>
-
-            </li>
-
-            {% for page in pages %}
-            <li>
-                <a href="{% url 'page' page.2 %}">{{page.1}}</a>
-            </li>
-           
-            {% endfor %} 
-            
+                </li>
+            {% endif %}
         </ul>
 
     </nav>
 
-    <div>
-        <span class="esquina-izquierda"></span>
-        <span class="esquina-derecha"></span>
-    </div>
 
-   <br>
+    <br>
 
     <div id="content">
 

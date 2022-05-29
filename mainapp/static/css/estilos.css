@@ -1,6 +1,5 @@
 /* Estilos generales */
 
-
 *{
     margin: 0px;
     padding: 0px;
@@ -230,12 +229,14 @@ nav > ul > li:hover > ul >li:hover{
 
 }*/
 
-/*.box form input[type="text"],
-.box form textarea
+.box form input[type="text"],
+.box form input[type="email"],
+.box form input[type="passwaord"],
+.box form textarea,
 .box form select{
     width: 100%;
     margin-bottom: 10px;
-}*/
+}
 
 
 /*.box form select
@@ -261,16 +262,20 @@ nav > ul > li:hover > ul >li:hover{
 
 }
 
-.message{
+.message,
+.alert-success,
+.alert{
     padding: 20px;
     background: #1f7e58;
-    color: white;
+    color: rgb(255, 1, 1);
     text-align: center;
     margin-bottom: 10px;
     
-
 }
 
+.alert-warning{
+    background: rgb(242, 158, 158);
+}
 
 .box form input[type="submit"]:hover,
 .box form input[type="button"]:hover,
